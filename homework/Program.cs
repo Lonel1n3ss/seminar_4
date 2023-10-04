@@ -65,32 +65,25 @@
 // 6, 1, 33 -> [6, 1, 33]
 
 
-
-/*
-
+int[] MRandom(int size, int min, int max)
+{
+    int[] array = new int[size];
+    System.Console.Write($"[");
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(min, max + 1);
+        System.Console.Write($"{array[i]}, ");
+    }
+    System.Console.Write($"\b\b]");
+    return array;
+}
 
 System.Console.Write("Введите длину массива: ");
-int arrayLength = Convert.ToInt32(Console.ReadLine());
-// System.Console.WriteLine("Введите начало диапазона случайных чисел: ");
-// int Rstart = Convert.ToInt32(Console.ReadLine());
-// System.Console.WriteLine("Введите конец диапазона случайных чисел: ");
-// int Rend = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Введите начало диапазона случайных чисел: ");
+int MinA = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Введите конец диапазона случайных чисел: ");
+int MaxA = Convert.ToInt32(Console.ReadLine());
 
-void MRandom(int col)
-{
-int[] array = new int[col];
+int[] arr = MRandom(n, MinA, MaxA);
 
-System.Console.Write($"[");
-for (int i = 0; i < array.Length; i++)
-{
-array[i] = new Random().Next(0, 10); // пытался добавить начало и конец диапазона, но так и не понял, как правильно записать это. 
-// Искал в интернете варианты, но не смог найти. Пробовал через  new Random().Next(Rstart, Rend); При этом добавлял в функцию через , int Rstart, int Rend
-// эти переменные, но выдавало ошибку. 
-System.Console.Write($"{array[i]}, ");
-}
-System.Console.Write($"\b\b]");
-}
-
-
-MRandom(arrayLength);
-System.Console.WriteLine();
